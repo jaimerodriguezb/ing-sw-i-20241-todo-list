@@ -1,0 +1,2 @@
+ActivityId = int
+CategoryId = int
