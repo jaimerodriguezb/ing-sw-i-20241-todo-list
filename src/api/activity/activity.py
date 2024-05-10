@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
-from flask import Flask
 from flask import request
-from flask_restx import Api, Resource, Namespace
+from flask_restx import Resource, Namespace
 from flask_accepts import accepts
 from flask import jsonify
 

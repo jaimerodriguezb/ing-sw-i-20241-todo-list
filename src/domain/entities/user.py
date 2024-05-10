@@ -1,8 +1,3 @@
-from datetime import datetime
-from typing import List, Optional
-
-from .activity import Activity
-
 
 class User():
     def __init__(self, name=None, last_name=None, email=None, activities=None, id=None):

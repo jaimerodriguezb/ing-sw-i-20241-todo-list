@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restx import Api
 from flask_cors import CORS
 from .activity import register_routes

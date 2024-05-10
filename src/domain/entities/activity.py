@@ -1,7 +1,3 @@
-from datetime import datetime
-from typing import List, Optional
-
-from ..value_objects import ActivityId
 
 class Activity():
     def __init__(self, id=None, name=None, user=None, hour=None, date=None):
