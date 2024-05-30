@@ -29,3 +29,24 @@ class ActivityApi(Resource):
             activity_service.create_activity(create_activity_to)
 
         return jsonify(dict(status="Success"))
+    
+    def get(self):
+        with uow:
+            activities = activity_repo.all()
+            activities_schema = ActivitySchema(many=True)
+            result = activities_schema.dump(activities)
+            
+        return jsonify(result)
+
+
+@api.route('/<int:id>')
+class ActivityDetailApi(Resource):
+
+    def get(self, id):
+        with uow:
+            activity = activity_repo.get(id)
+            if not activity:
+                return jsonify(dict(status="Not Found", message="Activity not found")), 404
+            activity_schema = ActivitySchema()
+            result = activity_schema.dump(activity)
+        return jsonify(result)
